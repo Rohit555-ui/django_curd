@@ -1,0 +1,19 @@
+1= Install python3-----cmd: sudo apt-get install python3
+2= Install pip3-----cmd: sudo apt-get install python3-pip
+3= create virtual env-----cmd: python3 -m venv env(it creates a folder naming env)
+4= activate env-----cmd: source env/bin/active(now you are virtual env now all packages will be install for this vir env only)
+5= create project-----cmd: django-admin startproject POLITICS(now same folder and manage.py under POLITICS will be create)
+6= create app-----cmd: python3 manage.py startapp app_name(it will create app for apis)
+   NOTE POINT = created app should be added in INSTALLED_APPS in setting.py
+7= after setting database config in DATABASES key in setting.py
+   cmd command to install its driver to connect database
+   cmd1 = sudo apt-get install libmysqlclient-dev
+   cmd2 = pip3 install mysqlclient
+
+8= for database changes
+    cmd1 = python3 manage.py makemigrations app_name or not given(if you want to apply changes of all apps)
+    cmd2 = python3 manage.py migrate
+
+9= to create all tables of django provided(auth_group, auth_user, auth....)
+    cmd1 = python3 manage.py makemigrations
+    cmd2 = python3 manage.py migrate
