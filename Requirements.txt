@@ -17,3 +17,47 @@
 9= to create all tables of django provided(auth_group, auth_user, auth....)
     cmd1 = python3 manage.py makemigrations
     cmd2 = python3 manage.py migrate
+
+
+-----------------------Git Configuration------------------------
+1 = install git
+    after coming to desired directory(which you want to make git repo)
+2 = set username and email to tell git that who you are
+    cmd1 = git config --global user.name your_name
+    cmd2 = git config --global user.email your_email
+3 = create .git folder
+    cmd1 = git init(it ceates .git folder in this folder to make it git repo)
+
+4 = To check status
+    cmd1 = git status
+
+    untracked     unmodified      modified       staged
+    git add
+    ----------------------------------------------->>
+                    edit
+                    ------------------>>
+                                        git add
+       remove                           ------------>
+     <<-------------                        commit
+                    <<--------------------------------
+
+git add =>> it adds changes of file in staging area
+git commit =>> it commits changes from staging area
+
+5 = to replace all file to previous
+    cmd1 = git checkout file_name or -f(to all files)
+
+6 = git logs (to show all commits)
+
+7 = to remove file from staging area
+    git rm --cached filename
+
+8 = to ignore file from git, create .git ignore file
+
+          (GIT HUB SERVICE)
+1 = create account and repo
+2 = after creating repo, will get url to clone code from git to local
+3 = add remote repo to local repo
+    git remote add origin repo-path
+4 = if needed to set url for origin
+    git remote set-url origin repo-path
