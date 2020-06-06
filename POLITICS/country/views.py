@@ -8,8 +8,42 @@ from rest_framework import status
 from .serializers import *
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
-from .models import Country
+from .models import Country, PMs
 import datetime
+
+
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+@permission_classes((IsAuthenticated, ))
+def pm_action(request):
+    if request.method == 'POST':
+        requested_data = request.data
+        post_serializers = PmsPostSerializers(data=requested_data)
+        if post_serializers.is_valid():
+            current_time = datetime.datetime.now()
+            validated_dict = post_serializers.validated_data
+            country_table_id = validated_dict['country_table_id']
+            name = validated_dict['name']
+            age = validated_dict['age']
+            party = validated_dict['party']
+            random_country_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+            pm_id = str(name) + '_' + str(random_country_id)
+            pm_object = PMs.objects.create(
+                name=name,
+                pm_id=pm_id,
+                age=age,
+                party=party,
+                time_stamp=current_time,
+                country_id=country_table_id
+            )
+            pm_object.save()
+            return_data = {
+                'message': 'New Pm Added Successfully',
+                'data': requested_data
+            }
+            return Response(return_data, status.HTTP_201_CREATED)
+
+        else:
+            return Response(post_serializers.errors, status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])

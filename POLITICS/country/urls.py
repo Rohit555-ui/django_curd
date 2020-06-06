@@ -20,4 +20,5 @@ from .views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('action', country_action),
+    path('pm_action', pm_action),
 ]
