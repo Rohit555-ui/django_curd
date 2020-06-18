@@ -11,6 +11,9 @@ from rest_framework.permissions import IsAuthenticated
 from .models import Country, PMs
 import datetime
 
+from django.apps import apps
+state_model = apps.get_model('states', 'States')
+
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
 @permission_classes((IsAuthenticated, ))
@@ -27,14 +30,22 @@ def pm_action(request):
             party = validated_dict['party']
             random_country_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
             pm_id = str(name) + '_' + str(random_country_id)
-            pm_object = PMs.objects.create(
-                name=name,
-                pm_id=pm_id,
-                age=age,
-                party=party,
-                time_stamp=current_time,
-                country_id=country_table_id
-            )
+            pm_object = PMs()
+            pm_object.name = name
+            pm_object.pm_id = pm_id
+            pm_object.age = age
+            pm_object.party = party
+            pm_object.time_stamp = current_time
+            pm_object.country_id = country_table_id
+
+            # pm_object = PMs.objects.create(
+            #     name=name,
+            #     pm_id=pm_id,
+            #     age=age,
+            #     party=party,
+            #     time_stamp=current_time,
+            #     country_id=country_table_id
+            # )
             pm_object.save()
             return_data = {
                 'message': 'New Pm Added Successfully',
@@ -44,6 +55,53 @@ def pm_action(request):
 
         else:
             return Response(post_serializers.errors, status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'GET':
+        requested_data = request.query_params
+        pm_id = requested_data.get('pm_id')
+        if pm_id:
+            pms_data = PMs.objects.filter(pm_id=pm_id)
+        else:
+            pms_data = PMs.objects.all()
+        if pms_data.exists():
+            result = []
+            for pm_obj in pms_data:
+                current_pm_data = {
+                    'pm_name': pm_obj.name,
+                    'pm_age': pm_obj.age,
+                    'pm_party': pm_obj.party,
+                    'country_name': pm_obj.country.name
+                }
+                states_data = []
+                all_states = state_model.objects.filter(country_id=pm_obj.country.id)
+                for state_obj in all_states:
+                    current_state = {
+                        'state_name': state_obj.name
+                    }
+                    states_data.append(current_state)
+                current_pm_data['states'] = states_data
+
+                result.append(current_pm_data)
+            response_data = result
+        else:
+            response_data = {
+                'message': 'Data Not Available'
+            }
+        return Response(response_data, status.HTTP_200_OK)
+    elif request.method == 'DELETE':
+        try:
+            request_data = request.data if request.data is not None else {}
+            pm_id = request_data.get('pm_id', None)
+            if pm_id is not None:
+                pm_data = PMs.objects.filter(pm_id=pm_id)
+                if pm_data.exists():
+                    pm_delete_result = pm_data.delete()
+                    return Response({'message': 'Pm deleted successfully'}, status.HTTP_200_OK)
+                else:
+                    return Response({'error': 'Pm id is incorrect'}, status.HTTP_400_BAD_REQUEST)
+            else:
+                return Response({'error': 'Pm id is required'}, status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response({'error': str(e)}, status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])

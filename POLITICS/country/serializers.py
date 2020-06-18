@@ -33,8 +33,9 @@ class PmsPostSerializers(serializers.Serializer):
         except Exception as e:
             raise serializers.ValidationError('This Country does not exists in this world')
 
-        country_pm_mapping_data = PMs.objects.filter(country_id=country_data.id, name=name)
-        if country_pm_mapping_data.exists():
-            raise serializers.ValidationError('This Pm already added for this country')
+        country_mapping_data = PMs.objects.filter(country_id=country_data.id)
+        if country_mapping_data.exists():
+            raise serializers.ValidationError('This country has already pm, '+str(country_mapping_data[0].name))
+
         attrs['country_table_id'] = country_data.id
         return attrs
