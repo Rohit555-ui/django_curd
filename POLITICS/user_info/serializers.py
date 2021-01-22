@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from rest_framework.exceptions import ValidationError, NotFound
+from rest_framework import status
 
 
 class CreateUserSerializers(serializers.ModelSerializer):
@@ -15,8 +17,8 @@ class CreateUserSerializers(serializers.ModelSerializer):
 
 
 class LoginSerializer(serializers.Serializer):
-    # username = serializers.CharField()
-    # password = serializers.CharField()
+    username = serializers.CharField(required=True)
+    password = serializers.CharField(required=True)
 
     def validate(self, data):
         username = data.get("username", "")
@@ -24,7 +26,11 @@ class LoginSerializer(serializers.Serializer):
 
         if username and password:
             # it checks username, password in database if available, return user object
-            user = User.objects.get(username=username, password=password)
+            try:
+                user = get(username=username, password=password)
+            except Exception as e:
+                raise NotFound
+
             if user:
                 if user.is_active:
                     data['user'] = user
@@ -33,6 +39,6 @@ class LoginSerializer(serializers.Serializer):
             else:
                 raise serializers.ValidationError("Unable to login")
         else:
-            raise serializers.ValidationError("Username and Password are required")
+            raise ValidationError("Username and Password are required", status.HTTP_400_BAD_REQUEST)
 
         return data

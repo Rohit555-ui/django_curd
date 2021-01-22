@@ -1,4 +1,4 @@
-"""POLITICS URL Configuration
+"""config URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -19,6 +19,6 @@ from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/', UserAction.as_view()),
+    path('UserAction/', UserAction.as_view()),
     path('login/', LoginView.as_view()),
 ]

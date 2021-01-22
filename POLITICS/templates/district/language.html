@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--either object_list or modelname_list-->
+{% for i in object_list %}
+{{i.name}}{{i.language.name}}
+{% endfor %}<br>
+</body>
+</html>

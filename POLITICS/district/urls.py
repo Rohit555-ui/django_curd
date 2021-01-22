@@ -1,4 +1,4 @@
-"""POLITICS URL Configuration
+"""config URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -16,8 +16,30 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import *
+from rest_framework.routers import DefaultRouter
+
+
+router = DefaultRouter()
+router.register(r'VS', CountryViewSet)
+router.register(r'VSS', CountryViewSetOnly)
+router.register(r'Language', CountryViewSetOnly)
+router.register(r'TVS', TestViewSet, basename='testViewSet')
 
 urlpatterns = [
+    path('View_Set/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('action', DistrictAction.as_view()),
+    path('test', test_action.as_view()),
+    path('uploadFile', uploadFile),
+    path('testm', test_model),
+    path('oneToMany', one_to_many),
+    path('manyToMany', many_to_many),
+    path('student', StudentDetails.as_view()),
+    path('studentm', StudentDetailsMixin.as_view()),
+    path('DCBV/', DjangoBaseView.as_view()),
+    # either we can pass template name here or we define template name in view class like DTVWOP
+    path('DTVWOP', TemplateView.as_view(template_name='TemplateViews/template_view.html'), name='DTVWOP'),
+    path('DTVWP', DjangoTemplateViewWithParameters.as_view(), name='DTVWP'),
+    path('DRV', DjangoRedirectView.as_view()),
+    path('DLV', DjangoListView.as_view()),
 ]

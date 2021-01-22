@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Language List Object</title>
+</head>
+<body>
+<!--by default language_list contains list of model(given in django list view class) object-->
+{% for language in language_list %}
+{{language.name}}{{language.id}}
+{% endfor %} <br>
+</body>
+</html>

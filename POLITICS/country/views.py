@@ -10,14 +10,23 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from .models import Country, PMs
 import datetime
+from django.shortcuts import render
 
 from django.apps import apps
 state_model = apps.get_model('states', 'States')
 
 
+@api_view(['GET'])
+def pm_action(request):
+    if request.method == 'GET':
+        country_data = PMs.objects.select_related("name").all().values()
+        return Response(str(country_data.query))
+        return Response(country_data)
+
+
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
 @permission_classes((IsAuthenticated, ))
-def pm_action(request):
+def pm_action1(request):
     if request.method == 'POST':
         requested_data = request.data
         post_serializers = PmsPostSerializers(data=requested_data)
@@ -182,17 +191,16 @@ def country_action(request):
         country_instance = CountrySerializers(data=request_data)
         if country_instance.is_valid():
             country_name = request_data['name']
-            time_stamp = request_data['time_stamp']
+            time_stamp = datetime.datetime.now()
             check_country_entry = Country.objects.filter(name=country_name)
             if not check_country_entry.exists():
                 random_country_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
                 new_country_id = str(country_name) + "_" + str(random_country_id)
-                new_country = Country.objects.create(
-                    name=country_name,
-                    country_id=new_country_id,
-                    time_stamp=time_stamp
-                )
-                new_country.save()
+                country_obj = Country()
+                country_obj.name = country_name
+                country_obj.country_id = new_country_id
+                country_obj.time_stamp = time_stamp
+                country_obj.save()
                 response_data = {
                     'message': 'Country Added Successfully',
                     'data': request_data
@@ -208,3 +216,9 @@ def country_action(request):
         else:
             return Response(country_instance.errors, status.HTTP_400_BAD_REQUEST)
 
+
+def country_home(request):
+    pass_d = {
+        "name": "rohit"
+    }
+    return render(request, 'country/allCountry.html', pass_d)

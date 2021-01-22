@@ -6,8 +6,15 @@ from rest_framework import status
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import login as django_login
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAuthenticated
+import logging
+from rest_framework.exceptions import PermissionDenied
+
+logger = logging.getLogger(__name__)
 
 
+@permission_classes((IsAuthenticated,))
 class UserAction(APIView):
     def post(self, request):
         try:
@@ -31,7 +38,8 @@ class UserAction(APIView):
             else:
                 return Response(serialized_data.errors, status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            return Response(e, status.HTTP_400_BAD_REQUEST)
+            return PermissionDenied
+            # return Response(e, status.HTTP_400_BAD_REQUEST)
 
 
 class LoginView(APIView):
@@ -39,12 +47,10 @@ class LoginView(APIView):
         serializer = LoginSerializer(data=request.data)
         # after successfull validation in serializer, a validated data dict will be attached to serializer
         if serializer.is_valid():
-            #to get that attached validated data dict
+            # to get that attached validated data dict
             user = serializer.validated_data['user']
             django_login(request, user)
             token, created = Token.objects.get_or_create(user=user)
             return Response({"token": token.key}, status=200)
         else:
             return Response({"error": serializer.errors}, status=404)
-
-

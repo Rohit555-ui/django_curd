@@ -74,6 +74,9 @@ class StatesAction(APIView):
             return Response(response_data, status.HTTP_200_OK)
 
     def get(self, request):
+        print(request.user.first_name)
+        print(request.user.last_name)
+        print(request.user.email)
         # all_states_data = States.objects.values(id=1)
         # this values method converts query set into dictionary and send it directly
         final_data = []

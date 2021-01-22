@@ -7,10 +7,8 @@ import logging
 from django.contrib.auth.models import User
 
 
-class CountrySerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Country
-        fields = ('name', 'time_stamp')
+class CountrySerializers(serializers.Serializer):
+    name = serializers.CharField(max_length=100, required=True)
 
 
 class CountryGetDataSerializers(serializers.ModelSerializer):
