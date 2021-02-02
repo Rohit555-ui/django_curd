@@ -99,6 +99,9 @@ class Language(models.Model):
     class Meta:
         db_table = 'language'
 
+    def get_all_language(self):
+        return Language.objects.all()
+
 
 class Framework(models.Model):
     name = models.CharField(max_length=10)

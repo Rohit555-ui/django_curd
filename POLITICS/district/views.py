@@ -467,21 +467,25 @@ def one_to_many(request):
             # return Response(sum_id_dict)
             test_query_set = LanguageMaker.objects.select_related('framework__language').order_by('-id')
             group_by_set = Framework.objects.aggregate(Sum('id'))
-            annotate_query_set = Framework.objects.values('language').annotate(sum=Sum('language'))
+            annotate_query_set = Framework.objects.values('language').annotate(sum=Count('language'), max=Max('id'))
             tt = Framework.objects.values('name', 'language')
             print(tt)
             # for i in test_query_set:
             #     print(i.name)
             #     print(i.framework.name)
             #     print(i.framework.language.name)
-            return Response(str(annotate_query_set.query))
+            q2 = Language.objects.order_by('-id')[:3]
+            return Response(str(q2.query))
             # return Response(or_condition)
         elif custom == 1:
-            curr_obj = connection.cursor()
-            query = """SELECT * FROM framework AS T1 INNER JOIN language AS T2 ON T1.language_id=T2.id"""
-            df = pd.read_sql(query, con=connection)
-            print(df)
-            return Response(df)
+            l1 = Language()
+            q1 = l1.get_all_language()
+            return Response(str(q1.query))
+            # curr_obj = connection.cursor()
+            # query = """SELECT * FROM framework AS T1 INNER JOIN language AS T2 ON T1.language_id=T2.id"""
+            # df = pd.read_sql(query, con=connection)
+            # print(df)
+            # return Response(df)
 
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])

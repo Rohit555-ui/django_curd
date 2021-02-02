@@ -1489,3 +1489,264 @@ Traceback (most recent call last):
   File "/home/rohit/Desktop/CRUD/POLITICS/district/views.py", line 71, in get_queryset
     query_set = Language.object.filter(name='PHP')
 AttributeError: type object 'Language' has no attribute 'object'
+2021-01-25 12:58:22,952 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+Traceback (most recent call last):
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/POLITICS/district/views.py", line 480, in one_to_many
+    q1 = Language.get_all_language()
+TypeError: get_all_language() missing 1 required positional argument: 'self'
+2021-01-27 15:16:11,836 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+2021-01-27 15:16:23,825 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+2021-01-27 15:16:32,534 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+2021-01-29 10:45:59,117 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+2021-01-29 19:25:05,119 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+Traceback (most recent call last):
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/POLITICS/district/views.py", line 477, in one_to_many
+    q2 = Language.objects.order_by('-id')[:-1]
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/query.py", line 293, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+2021-01-29 19:28:02,148 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+Traceback (most recent call last):
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/POLITICS/district/views.py", line 478, in one_to_many
+    return Response(str(q2.query))
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 264, in __str__
+    sql, params = self.sql_with_params()
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 272, in sql_with_params
+    return self.get_compiler(DEFAULT_DB_ALIAS).as_sql()
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 506, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 423, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/sql/where.py", line 99, in as_sql
+    raise EmptyResultSet
+django.core.exceptions.EmptyResultSet
+2021-01-29 19:28:39,013 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+Traceback (most recent call last):
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/POLITICS/district/views.py", line 478, in one_to_many
+    return Response(str(q2.query))
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 264, in __str__
+    sql, params = self.sql_with_params()
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 272, in sql_with_params
+    return self.get_compiler(DEFAULT_DB_ALIAS).as_sql()
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 506, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 423, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/sql/where.py", line 99, in as_sql
+    raise EmptyResultSet
+django.core.exceptions.EmptyResultSet
+2021-01-29 19:30:24,369 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+Traceback (most recent call last):
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/POLITICS/district/views.py", line 478, in one_to_many
+    return Response(str(q2.query))
+AttributeError: 'Language' object has no attribute 'query'
+2021-01-29 19:32:43,434 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+Traceback (most recent call last):
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/POLITICS/district/views.py", line 478, in one_to_many
+    return Response(str(q2.query))
+AttributeError: 'int' object has no attribute 'query'
+2021-01-29 19:34:09,603 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+Traceback (most recent call last):
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/POLITICS/district/views.py", line 477, in one_to_many
+    q2 = Language.objects.order_by('id')[-2].id
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/query.py", line 293, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+2021-01-29 19:35:41,394 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+Traceback (most recent call last):
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/POLITICS/district/views.py", line 477, in one_to_many
+    q2 = Language.objects.order_by('id')[:3].last()
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/query.py", line 669, in last
+    for obj in (self.reverse() if self.ordered else self.order_by('-pk'))[:1]:
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/query.py", line 1115, in reverse
+    raise TypeError('Cannot reverse a query once a slice has been taken.')
+TypeError: Cannot reverse a query once a slice has been taken.
+2021-01-29 19:36:04,942 [ERROR] {/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/utils/log.py:228} : Internal Server Error: /district/oneToMany
+Traceback (most recent call last):
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/rohit/Desktop/CRUD/POLITICS/district/views.py", line 477, in one_to_many
+    q2 = Language.objects.order_by('-id')[:3].last()
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/query.py", line 669, in last
+    for obj in (self.reverse() if self.ordered else self.order_by('-pk'))[:1]:
+  File "/home/rohit/Desktop/CRUD/env/lib/python3.6/site-packages/django/db/models/query.py", line 1115, in reverse
+    raise TypeError('Cannot reverse a query once a slice has been taken.')
+TypeError: Cannot reverse a query once a slice has been taken.
