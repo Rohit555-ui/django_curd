@@ -24,6 +24,7 @@ router.register(r'VS', CountryViewSet)
 router.register(r'VSS', CountryViewSetOnly)
 router.register(r'Language', CountryViewSetOnly)
 router.register(r'TVS', TestViewSet, basename='testViewSet')
+router.register(r'VU', VedioUpload, basename='testViewSet')
 
 urlpatterns = [
     path('View_Set/', include(router.urls)),
@@ -42,4 +43,6 @@ urlpatterns = [
     path('DTVWP', DjangoTemplateViewWithParameters.as_view(), name='DTVWP'),
     path('DRV', DjangoRedirectView.as_view()),
     path('DLV', DjangoListView.as_view()),
+    path('MM', LanguageMixin.as_view()),
+    path('ROLL', RollExample.as_view()),
 ]

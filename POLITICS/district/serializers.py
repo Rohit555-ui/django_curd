@@ -6,6 +6,12 @@ states_model = apps.get_model('states', 'States')
 country_model = apps.get_model('country', 'Country')
 
 
+class VedioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Video
+        fields = '__all__'
+
+
 class FrameworkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Framework
@@ -65,6 +71,11 @@ class uploadFileSerializer(serializers.ModelSerializer):
 class TestSerializers(serializers.Serializer):
     name = serializers.CharField(required=True)
     address = serializers.CharField(required=True)
+
+
+class TestingSerializer(serializers.Serializer):
+    value = serializers.FloatField(required=True)
+    date_time = serializers.DateTimeField()
 
 
 class DistrictPostSerializers(serializers.Serializer):

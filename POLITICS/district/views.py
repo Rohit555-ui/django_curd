@@ -1,3 +1,4 @@
+# from django.conf.global_settings import MEDIA_ROOT
 from django.shortcuts import render
 from django.views.generic import ListView
 from rest_framework.views import APIView
@@ -25,6 +26,11 @@ from django.apps import apps
 import pandas as pd
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView, RedirectView
+from rest_framework import generics
+from django.db import transaction
+
+# from ..config.settings import MEDIA_ROOT
+# from ..config.settings import MEDIA_ROOT
 
 states_model = apps.get_model('states', 'States')
 country_model = apps.get_model('country', 'Country')
@@ -34,6 +40,34 @@ from .permmissions import IsCrudAdmin, IsNameRohit
 from rest_framework import generics
 
 from django.views import View
+
+
+class RollExample(APIView):
+    @transaction.atomic
+    def post(self, request):
+        l1 = Language()
+        l1.name = "lan10"
+        l1.save()
+
+        a = 10 / 0
+        f1 = Framework()
+        f1.language = l1
+        f1.namee = "frame2"
+        f1.save()
+        return Response("success")
+
+
+class LanguageMixin(generics.ListCreateAPIView):
+    queryset = Language.objects.all()
+    serializer_class = LanguageSerializer
+
+    # def get_queryset(self):
+    #     return self.queryset.filter(id=12)
+
+    def get(self, request):
+        qs = Language.objects.all()
+        serialized = LanguageSerializer(qs, many=True)
+        return Response(serialized.data)
 
 
 class DjangoBaseView(View):
@@ -98,6 +132,25 @@ class TestModelViewSet(viewsets.ModelViewSet):
 
     except Exception as e:
         print(str(e))
+
+
+class VedioUpload(viewsets.ViewSet):
+    def create(self, request):
+        request_data = request.data
+        serialized = VedioSerializer(data=request_data)
+        serialized.is_valid(raise_exception=True)
+        obj = Video()
+        obj.name = request_data['name']
+        obj.videofile = request.FILES['vedio']
+        obj.save()
+        return Response("success")
+
+    def list(self, request):
+        print("-----------------")
+        # print(MEDIA_ROOT)
+        all_vedio = Video.objects.all()
+        serialized_data = VedioSerializer(all_vedio, many=True)
+        return Response(serialized_data.data)
 
 
 # @permission_classes((IsAuthenticated,))
@@ -401,81 +454,94 @@ def one_to_many(request):
     elif request.method == 'GET':
         custom = 0
         if custom == 0:
+            request_data = request.query_params
+            serilized = TestingSerializer(data=request_data)
+            serilized.is_valid(raise_exception=True)
+            v1 = serilized.data['value']
+            v2 = serilized.validated_data['value']
+            return Response(str(type(serilized.validated_data['date_time'])))
+            print(type(v1))
+            print(type(v2))
             test_list = []
-            # refer link
-            # https://books.agiliq.com/projects/django-orm-cookbook/en/latest/truncate.html
-            all_data_no_condition = Framework.objects.all()
-            # or all_data_no_condition = Framework.objects.filter()
-            or_condition = Framework.objects.filter(Q(name__startswith='C') | Q(name__endswith='o'))
-
+            # # refer link
+            # # https://books.agiliq.com/projects/django-orm-cookbook/en/latest/truncate.html
+            # all_data_no_condition = Framework.objects.all()
+            # # or all_data_no_condition = Framework.objects.filter()
             # or_condition = Framework.objects.filter(Q(name__startswith='C') | Q(name__endswith='o'))
-            and_condition = Framework.objects.filter(Q(name__startswith='D') & Q(language_id=11))
-            not_condition_first = Framework.objects.filter(~Q(name__startswith='D'))
-            not_condition_second = Framework.objects.filter(id=10).exclude(Q(name__startswith='D'))
+            #
+            # # or_condition = Framework.objects.filter(Q(name__startswith='C') | Q(name__endswith='o'))
+            # and_condition = Framework.objects.filter(Q(name__startswith='D') & Q(language_id=11))
+            # not_condition_first = Framework.objects.filter(~Q(name__startswith='D'))
+            # not_condition_second = Framework.objects.filter(id=10).exclude(Q(name__startswith='D'))
+            #
+            # query_set_1 = Framework.objects.filter(Q(id=3))
+            # query_set_2 = Framework.objects.filter(Q(id=4))
+            # union_condition = query_set_1.union(query_set_2)
+            #
+            # values_some_field_without_cond = Framework.objects.values("name")
+            # values_some_field_fetch_cond = Framework.objects.filter(id=4).values("name")
+            # only_some_field_fetch_cond = Framework.objects.filter(id=4).only("name")
+            #
+            # language_filter_cond = Language.objects.filter(name="PHP")
+            # # subquery_condition = Framework.objects.filter(
+            # #     Q(language_id__in=Subquery(language_filter_cond.values("id"))))
+            #
+            # greater_than_condition = Framework.objects.filter(id__gt=5)
+            # greater_than_equal_condition = Framework.objects.filter(id__gte=5)
+            #
+            # less_than_condition = Framework.objects.filter(id__lt=5)
+            # less_than_equal_condition = Framework.objects.filter(id__lte=5)
+            #
+            # inner_join_select_related = Framework.objects.select_related("language")
+            # inner_join_filter = Framework.objects.filter(language__name='PHP')
+            #
+            # inner_join_condition = Framework.objects.prefetch_related('name').all()
+            # inner_join_condition_extra = Framework.objects.filter(language_id=11).select_related('language')
+            #
+            # test_query = Framework.objects.select_related('language')
+            # test_query1 = Framework.objects.all()
+            #
+            # order_by_all = Framework.objects.order_by('-id')
+            # order_by_filter = Framework.objects.filter(language_id=11).order_by('-id')
+            #
+            # seconds_largest_id = Framework.objects.order_by('-id')[1]
+            #
+            # # distinct_language_id = Framework.objects.distinct('language_id').all()
+            #
+            # # aggregate functions returns dictionary
+            # max_id_dict = Framework.objects.aggregate(Max('id'))
+            # min_id_dict = Framework.objects.aggregate(Min('id'))
+            # avg_id_dict = Framework.objects.aggregate(Avg('id'))
+            # sum_id_dict = Framework.objects.aggregate(Sum('id'))
+            # # print(sum_id_dict)
+            #
+            # # Between two values queryset and null example
+            # between_queryset = Framework.objects.filter(~Q(name__isnull=True) & Q(id__range=(1, 9)))
+            #
+            # # for i in inner_join_filter:
+            # #     language_dict = {
+            # #         'frame_work_name': i.name,
+            # #         'language_name': i.language.name
+            # #     }
+            # #     test_list.append(language_dict)
+            # # print(connection.queries)
+            # # return Response(sum_id_dict)
+            # test_query_set = LanguageMaker.objects.select_related('framework__language')
+            # group_by_set = Framework.objects.aggregate(Sum('id'))
+            # annotate_query_set = Framework.objects.values('language').annotate(sum=Count('language'), max=Max('id'))
+            # tt = Framework.objects.values('name', 'language')
+            # print(tt)
+            # # for i in test_query_set:
+            # #     print(i.name)
+            # #     print(i.framework.name)
+            # #     print(i.framework.language.name)
+            # q2 = Language.objects.order_by('-id')[:3]
+            test__query = LanguageMaker.objects.all().select_related('framework__language')
+            for i in test__query:
+                print(i.framework.name, i.framework.language.name)
 
-            query_set_1 = Framework.objects.filter(Q(id=3))
-            query_set_2 = Framework.objects.filter(Q(id=4))
-            union_condition = query_set_1.union(query_set_2)
-
-            values_some_field_without_cond = Framework.objects.values("name")
-            values_some_field_fetch_cond = Framework.objects.filter(id=4).values("name")
-            only_some_field_fetch_cond = Framework.objects.filter(id=4).only("name")
-
-            language_filter_cond = Language.objects.filter(name="PHP")
-            # subquery_condition = Framework.objects.filter(
-            #     Q(language_id__in=Subquery(language_filter_cond.values("id"))))
-
-            greater_than_condition = Framework.objects.filter(id__gt=5)
-            greater_than_equal_condition = Framework.objects.filter(id__gte=5)
-
-            less_than_condition = Framework.objects.filter(id__lt=5)
-            less_than_equal_condition = Framework.objects.filter(id__lte=5)
-
-            inner_join_select_related = Framework.objects.select_related("language")
-            inner_join_filter = Framework.objects.filter(language__name='PHP')
-
-            inner_join_condition = Framework.objects.prefetch_related('name').all()
-            inner_join_condition_extra = Framework.objects.filter(language_id=11).select_related('language')
-
-            test_query = Framework.objects.select_related('language')
-            test_query1 = Framework.objects.all()
-
-            order_by_all = Framework.objects.order_by('-id')
-            order_by_filter = Framework.objects.filter(language_id=11).order_by('-id')
-
-            seconds_largest_id = Framework.objects.order_by('-id')[1]
-
-            # distinct_language_id = Framework.objects.distinct('language_id').all()
-
-            # aggregate functions returns dictionary
-            max_id_dict = Framework.objects.aggregate(Max('id'))
-            min_id_dict = Framework.objects.aggregate(Min('id'))
-            avg_id_dict = Framework.objects.aggregate(Avg('id'))
-            sum_id_dict = Framework.objects.aggregate(Sum('id'))
-            # print(sum_id_dict)
-
-            # Between two values queryset and null example
-            between_queryset = Framework.objects.filter(~Q(name__isnull=True) & Q(id__range=(1, 9)))
-
-            # for i in inner_join_filter:
-            #     language_dict = {
-            #         'frame_work_name': i.name,
-            #         'language_name': i.language.name
-            #     }
-            #     test_list.append(language_dict)
-            # print(connection.queries)
-            # return Response(sum_id_dict)
-            test_query_set = LanguageMaker.objects.select_related('framework__language').order_by('-id')
-            group_by_set = Framework.objects.aggregate(Sum('id'))
-            annotate_query_set = Framework.objects.values('language').annotate(sum=Count('language'), max=Max('id'))
-            tt = Framework.objects.values('name', 'language')
-            print(tt)
-            # for i in test_query_set:
-            #     print(i.name)
-            #     print(i.framework.name)
-            #     print(i.framework.language.name)
-            q2 = Language.objects.order_by('-id')[:3]
-            return Response(str(q2.query))
+            print(connection.queries)
+            return Response(str(test__query.query))
             # return Response(or_condition)
         elif custom == 1:
             l1 = Language()

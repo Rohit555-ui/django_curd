@@ -184,6 +184,15 @@ class SelfExample(models.Model):
         db_table = 'self_example'
 
 
+class Video(models.Model):
+    name = models.CharField(max_length=500)
+    # by default upload_to file path will calculate inside media
+    videofile = models.FileField(upload_to='video/', null=True, verbose_name="")
+
+    def __str__(self):
+        return self.name + ": " + str(self.videofile)
+
+
 def b_save(sender, instance, **kwargs):
     print("b save is calling")
 

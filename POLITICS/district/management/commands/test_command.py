@@ -9,9 +9,9 @@ class Command(BaseCommand):
     help = 'Test Redis Cache Connection'
 
     def add_arguments(self, parser):
-        # pass
-        parser.add_argument('poll_ids', type=int)
+        pass
+        # parser.add_argument('poll_ids', type=int)
 
     def handle(self, *args, **kwargs):
-        print(kwargs['poll_ids'])
+        # print(kwargs['poll_ids'])
         self.stdout.write(self.style.SUCCESS('success...'))
