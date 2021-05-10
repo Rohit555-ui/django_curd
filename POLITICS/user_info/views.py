@@ -14,7 +14,7 @@ from rest_framework.exceptions import PermissionDenied
 logger = logging.getLogger(__name__)
 
 
-@permission_classes((IsAuthenticated,))
+# @permission_classes((IsAuthenticated,))
 class UserAction(APIView):
     def post(self, request):
         try:

@@ -23,11 +23,15 @@ class LoginSerializer(serializers.Serializer):
     def validate(self, data):
         username = data.get("username", "")
         password = data.get("password", "")
+        print(username,password)
+
+        user_1 = User.objects.filter(username=username, password=password)
+        print(user_1.values())
 
         if username and password:
             # it checks username, password in database if available, return user object
             try:
-                user = get(username=username, password=password)
+                user = User.objects.get(username=username, password=password)
             except Exception as e:
                 raise NotFound
 

@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from django.views.generic import ListView
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.views import APIView
+from rest_framework.generics import CreateAPIView, ListAPIView
 from django.db.models import Avg, Max, Min, Sum, Count
 from rest_framework import viewsets, mixins
 from .serializers import *
 import random, logging
 from .decorator import decor, DecorClass
-from drf_yasg.utils import swagger_auto_schema
+from drf_yasg.utils import get_serializer_class, swagger_auto_schema
 from rest_framework.exceptions import ParseError
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view, permission_classes
@@ -59,6 +61,44 @@ class DjangoRedirectView(RedirectView):
     pattern_name = 'DTVWOP'
     # either it should be redireted acc. to given url or pattern_name(given name in url mapping)
 
+class ApiViewExample(APIView):
+    def get(self, request, id, *args, **kwargs):
+        print(args)
+        print(kwargs)
+        print(id)
+        return Response(request.query_params)
+    def post(self, request, *args, **kwargs):
+        print(args)
+        print(kwargs)
+        return Response(request.data)
+    def put(self, request, id, *args, **kwargs):
+        print(args)
+        print(kwargs)
+        print(id)
+        return Response(request.data)
+    def delete(self, request, id, *args, **kwargs):
+        print(args)
+        print(kwargs)
+        print(id)
+        return Response(request.data)
+
+class CreateApiViewExample(CreateAPIView):
+    # As CreateAPIView is used for creating model instance but get, post, put, delete method may be used inside this bcoz it extends APIView class and that class has all methods
+    def post(self, request, *args, **kwargs):
+        return Response(request.data)
+    def get(self, request, *args, **kwargs):
+        return Response(request.query_params)
+
+class ListApiViewExample(ListAPIView):
+    serializer_class = StudentSerializerS
+    queryset = Student.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        print(kwargs)
+        if 'id' in kwargs:
+            return StudentSerializerS(self.queryset.filter(id=kwargs['id'])).data
+        return self.list(request, *args, **kwargs)
+        
 
 class DjangoListView(ListView):
     # it will search by default modelname_list.html file in app_name directory in templates folder
@@ -82,6 +122,45 @@ class CountryViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         return Response("create method is called")
+
+class all_m(generics.ListAPIView):
+    queryset = Model1.objects.all()
+    serializer_class = Allm
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['name', 'name1']
+
+class Hexample(APIView):
+    # serilizer_class = TestSerializers
+    # queryset = Testing.objects.all()
+
+    def post(self, request, *args, **kwargs):
+        # return Response("inside")
+        request_data = request.data
+        serialized_data = TestSerializers(data=request_data)
+        if serialized_data.is_valid():
+            serialized_data.save()
+            return Response("success")
+        else:
+            return Response(serialized_data.errors)
+
+class StudentExSerView(APIView):
+    def post(self, request):
+        from .serializers import StudentSerEx
+        ser  = StudentSerEx(data=request.data)
+
+        if ser.is_valid(raise_exception=True):
+            # print(ser.validated_data)
+            ser.save()
+            # print(ser.data)
+            return Response("Success")
+
+class StudentHistoryView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        s = Student.objects.create(name='student1122', address='address1122')
+        return Response("saved")
+
 
 
 class TestModelViewSet(viewsets.ModelViewSet):
@@ -341,11 +420,35 @@ class StudentDetailsMixin(mixins.CreateModelMixin,
         return self.retrieve(request, *args, **kwargs)
 
 
+class Model1Post(APIView):
+    def post(self, request):
+        ser = Model1Serializer(data=request.data)
+
+        if ser.is_valid():
+            print(ser.validated_data)
+            print(ser.data)
+            # ser.save()
+            print(ser.validated_data)
+            return Response("saved")
+        else:
+            return Response(ser.errors)
+
+    def put(self, request):
+        ins = Model1.objects.filter(name=request.data.get('name')).first()
+        ser = Model1Serializer(ins,data=request.data, partial=True)
+        if ser.is_valid():
+            ser.save()
+            print(ser.validated_data)
+            print(ser.data)
+            return Response("saved")
+        else:
+            return Response(ser.errors)
+
 class StudentDetails(APIView):
     def get(self, request):
         all_student = Student.objects.all()
         if all_student.exists():
-            serialized_students = StudentSerializerS(all_student, many=True)
+            serialized_students = StudentSerializerS(all_student, many=True, context={'course_count': False})
             return Response(serialized_students.data, status.HTTP_200_OK)
         else:
             return Response({'message': 'Student Data Not Available'}, status.HTTP_400_BAD_REQUEST)
@@ -355,6 +458,7 @@ class StudentDetails(APIView):
         serialized = StudentSerializerS(data=request_data)
 
         if serialized.is_valid():
+            print(serialized.validated_data)
             student_object = Student()
             student_object.name = request_data['name']
             student_object.address = request_data['address']
@@ -655,3 +759,54 @@ class DistrictAction(APIView):
                 'error': str(e)
             }
             return Response(response_data, status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

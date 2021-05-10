@@ -1,14 +1,23 @@
 from django.db import models
 from django.db.models.signals import post_save, pre_save
 from .signals import *
+from simple_history.models import HistoricalRecords
 
 
 class Model1(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, null=False, blank=False)
+    name1 = models.CharField(max_length=100, null=False, blank=False)
+    name2 = models.CharField(max_length=100, null=False, blank=False)
 
     class Meta:
         db_table = 'model1'
 
+class Model111(models.Model):
+    name = models.CharField(max_length=100)
+
+
+class Model555(models.Model):
+    name = models.CharField(max_length=100)
 
 class Model2(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -31,6 +40,12 @@ class Model4(models.Model):
 
     class Meta:
         db_table = 'model4'
+
+class Model6(models.Model):
+    name = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = 'model6'
 
 
 class Model5(models.Model):
@@ -75,20 +90,15 @@ class Courses(models.Model):
 class Student(models.Model):
     # first entry of tuple in choises is to set value, seconds is for description of setting value
     category_values = (
-        ('General', 'Upper Caste'),
-        ('Obc', 'Other Backword Class'),
-        ('Sc', 'Scheduled Castes'),
-        ('St', 'Scheduled Tribes')
+        ('c1', 'c1'),
+        ('c2', 'c2'),
+        ('c3', 'c3'),
+        ('c4', 'c4')
     )
     name = models.CharField(max_length=100, null=False, blank=False)
-    course = models.ManyToManyField(Courses, related_name='student_course')
+    course = models.ManyToManyField(Courses)
     address = models.CharField(max_length=100, null=False, blank=False)
-    roll_no = models.CharField(max_length=100, null=False, blank=False, unique=True)
-    student_category = models.CharField(max_length=100, choices=category_values)
-    student_weight = models.CharField(max_length=100, default=None)
-
-    student_height = models.CharField(max_length=10, default=None)
-
+    history = HistoricalRecords()
     class Meta:
         db_table = 'student'
 

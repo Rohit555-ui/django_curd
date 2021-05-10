@@ -4,6 +4,11 @@ from .signals import (
     process_after_pm_insert, process_before_pm_delete, process_after_country_insert, process_after_country_delete
 )
 
+class Model1112(models.Model):
+    name = models.CharField(max_length=100)
+
+class Model222(models.Model):
+    name = models.CharField(max_length=100)
 
 class Country(models.Model):
     id = models.AutoField(primary_key=True)

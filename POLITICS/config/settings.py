@@ -48,10 +48,14 @@ INSTALLED_APPS = [
     # for login after placing 'rest_framework.authtoken' in INSTALLED_APPS once migrate
     # and it creates authtoken_token table to hold token for user
     # that table will be accessed by Token in project
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
 
     # for static files(html, css, js) running
     # 'django.contrib.staticfiles'
+    'django_filters',
+
+    # for simple history
+    'simple_history'
 ]
 
 MIDDLEWARE = [
@@ -61,7 +65,8 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware'
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'simple_history.middleware.HistoryRequestMiddleware',
     # my own middleware
     # 'district.middlewares.HooksMiddleware',
     # 'district.middlewares.MyMiddleware',
@@ -106,10 +111,11 @@ REST_FRAMEWORK = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'crud',
+        'ENGINE': 'mysql.connector.django',
+        # 'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'crud1',
         'USER': 'root',
-        'PASSWORD': 'rohit',
+        'PASSWORD': 'Rohit@12345',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
