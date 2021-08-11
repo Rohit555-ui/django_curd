@@ -98,6 +98,7 @@ class Student(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False)
     course = models.ManyToManyField(Courses)
     address = models.CharField(max_length=100, null=False, blank=False)
+    value = models.FloatField()
     history = HistoricalRecords()
     class Meta:
         db_table = 'student'
@@ -113,9 +114,14 @@ class Language(models.Model):
         return Language.objects.all()
 
 
+def testing():
+    return "rohit"
+
+
 class Framework(models.Model):
     name = models.CharField(max_length=10)
-    language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='lan_frame')
+    language = models.ForeignKey(Language, on_delete=models.CASCADE)
+    # language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='lan_frame')
 
     class Meta:
         db_table = 'framework'

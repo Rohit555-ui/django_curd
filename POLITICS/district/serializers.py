@@ -41,14 +41,28 @@ class CourseSerializer(serializers.ModelSerializer):
         model = Courses
         fields = ["id"]
 
+class DynamicFieldSerializerMixin(object):
+    dynamic_fields: dict = {}
 
-class StudentSerializerS(serializers.ModelSerializer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        for field_name, context_key in self.dynamic_fields.items():
+            if not self.context.get(context_key):
+                self.fields.pop(field_name)
+
+
+class StudentSerializerS(DynamicFieldSerializerMixin, serializers.ModelSerializer):
     # name = serializers.CharField(max_length=100, required=True)
     # address = serializers.CharField(max_length=100, required=True)
     # # student_category = serializers.CharField(max_length=100, required=True)
     # course_name = serializers.SerializerMethodField('rohit')
     # above example of one of this example
     courses = CourseSerializer(read_only=True, many=True)
+    dynamic_fields = {
+        "name": "with_name",
+        "address": "with_address"
+    }
 
     no_of_course = serializers.SerializerMethodField()
     def get_no_of_course(self, obj):
@@ -59,7 +73,7 @@ class StudentSerializerS(serializers.ModelSerializer):
 
     class Meta:
         model = Student
-        fields = ["name", "address", "no_of_course", "courses"]
+        fields = ["name", "address", "no_of_course", "courses", "value"]
 
 class CountryViewSetSerializer(serializers.ModelSerializer):
     class Meta:

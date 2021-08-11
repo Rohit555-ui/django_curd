@@ -3588,3 +3588,853 @@ Traceback (most recent call last):
   File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 161, in post
     s = Student.object.create(name='student1122', address='address1122')
 AttributeError: type object 'Student' has no attribute 'object'
+2021-05-17 22:44:57,973 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: celery_exam() takes 0 positional arguments but 1 was given
+2021-05-17 22:45:21,516 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: celery_exam() takes 0 positional arguments but 1 was given
+2021-05-17 22:46:04,989 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+2021-05-17 22:48:54,697 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 43, in get
+    result = add(5, 10)
+NameError: name 'add' is not defined
+2021-05-17 22:48:56,310 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 43, in get
+    result = add(5, 10)
+NameError: name 'add' is not defined
+2021-05-17 22:49:26,414 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 43, in get
+    result = add(5, 10)
+NameError: name 'add' is not defined
+2021-05-17 22:50:27,283 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 43, in get
+    result = add(x=5, y=10)
+NameError: name 'add' is not defined
+2021-05-17 22:51:39,300 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (0/20) now.
+2021-05-17 22:51:39,301 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (1/20) in 1.00 second.
+2021-05-17 22:51:40,303 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (2/20) in 1.00 second.
+2021-05-17 22:51:41,310 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (3/20) in 1.00 second.
+2021-05-17 22:51:42,318 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (4/20) in 1.00 second.
+2021-05-17 22:51:43,324 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (5/20) in 1.00 second.
+2021-05-17 22:51:44,332 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (6/20) in 1.00 second.
+2021-05-17 22:51:45,340 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (7/20) in 1.00 second.
+2021-05-17 22:51:46,348 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (8/20) in 1.00 second.
+2021-05-17 22:51:47,355 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (9/20) in 1.00 second.
+2021-05-17 22:51:48,360 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (10/20) in 1.00 second.
+2021-05-17 22:51:49,366 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (11/20) in 1.00 second.
+2021-05-17 22:51:50,374 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (12/20) in 1.00 second.
+2021-05-17 22:51:51,382 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (13/20) in 1.00 second.
+2021-05-17 22:51:52,391 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (14/20) in 1.00 second.
+2021-05-17 22:51:53,395 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (15/20) in 1.00 second.
+2021-05-17 22:51:54,403 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (16/20) in 1.00 second.
+2021-05-17 22:51:55,409 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (17/20) in 1.00 second.
+2021-05-17 22:51:56,417 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (18/20) in 1.00 second.
+2021-05-17 22:51:57,424 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (19/20) in 1.00 second.
+2021-05-17 22:51:58,430 [CRITICAL] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:122} : 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2021-05-17 22:51:58,518 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 117, in reconnect_on_error
+    yield
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 167, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 3580, in subscribe
+    ret_val = self.execute_command('SUBSCRIBE', *iterkeys(new_channels))
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 3466, in execute_command
+    self.connection = self.connection_pool.get_connection(
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to localhost:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/kombu/connection.py", line 448, in _reraise_as_library_errors
+    yield
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/base.py", line 748, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 343, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 159, in consume_from
+    return self.start(task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 137, in start
+    self._consume_from(initial_task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 167, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 120, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 354, in ensure
+    return retry_over_time(
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/kombu/utils/functional.py", line 325, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 105, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 1671, in mget
+    return self.execute_command('MGET', *args, **options)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 898, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to localhost:6379. Connection refused.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 43, in get
+    result = add.delay(x=5, y=10)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/task.py", line 421, in delay
+    return self.apply_async(args, kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/task.py", line 561, in apply_async
+    return app.send_task(
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/base.py", line 749, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/kombu/connection.py", line 452, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: Error 61 connecting to localhost:6379. Connection refused.
+2021-05-17 22:53:28,236 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (0/20) now.
+2021-05-17 22:53:28,237 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (1/20) in 1.00 second.
+2021-05-17 22:53:29,244 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (2/20) in 1.00 second.
+2021-05-17 22:53:30,252 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (3/20) in 1.00 second.
+2021-05-17 22:53:31,260 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (4/20) in 1.00 second.
+2021-05-17 22:53:32,268 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (5/20) in 1.00 second.
+2021-05-17 22:53:33,275 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (6/20) in 1.00 second.
+2021-05-17 22:53:34,283 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (7/20) in 1.00 second.
+2021-05-17 22:53:35,290 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (8/20) in 1.00 second.
+2021-05-17 22:53:36,296 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (9/20) in 1.00 second.
+2021-05-17 22:53:37,305 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (10/20) in 1.00 second.
+2021-05-17 22:53:38,313 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (11/20) in 1.00 second.
+2021-05-17 22:53:39,321 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (12/20) in 1.00 second.
+2021-05-17 22:53:40,328 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (13/20) in 1.00 second.
+2021-05-17 22:53:41,331 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (14/20) in 1.00 second.
+2021-05-17 22:53:42,338 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (15/20) in 1.00 second.
+2021-05-17 22:53:43,346 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (16/20) in 1.00 second.
+2021-05-17 22:53:44,353 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (17/20) in 1.00 second.
+2021-05-17 22:53:45,361 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (18/20) in 1.00 second.
+2021-05-17 22:53:46,369 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (19/20) in 1.00 second.
+2021-05-17 22:53:47,373 [CRITICAL] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:122} : 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2021-05-17 22:53:47,489 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 117, in reconnect_on_error
+    yield
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 167, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 3580, in subscribe
+    ret_val = self.execute_command('SUBSCRIBE', *iterkeys(new_channels))
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 3466, in execute_command
+    self.connection = self.connection_pool.get_connection(
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to localhost:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/kombu/connection.py", line 448, in _reraise_as_library_errors
+    yield
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/base.py", line 748, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 343, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 159, in consume_from
+    return self.start(task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 137, in start
+    self._consume_from(initial_task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 167, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 120, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 354, in ensure
+    return retry_over_time(
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/kombu/utils/functional.py", line 325, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 105, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 1671, in mget
+    return self.execute_command('MGET', *args, **options)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 898, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to localhost:6379. Connection refused.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 43, in get
+    add.delay(x=5, y=10)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/task.py", line 421, in delay
+    return self.apply_async(args, kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/task.py", line 561, in apply_async
+    return app.send_task(
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/base.py", line 749, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/kombu/connection.py", line 452, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: Error 61 connecting to localhost:6379. Connection refused.
+2021-05-17 22:55:12,014 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (0/20) now.
+2021-05-17 22:55:12,023 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (1/20) in 1.00 second.
+2021-05-17 22:55:13,030 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (2/20) in 1.00 second.
+2021-05-17 22:55:14,036 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (3/20) in 1.00 second.
+2021-05-17 22:55:15,043 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (4/20) in 1.00 second.
+2021-05-17 22:55:16,049 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (5/20) in 1.00 second.
+2021-05-17 22:55:17,056 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (6/20) in 1.00 second.
+2021-05-17 22:55:18,063 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (7/20) in 1.00 second.
+2021-05-17 22:55:19,069 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (8/20) in 1.00 second.
+2021-05-17 22:55:20,076 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (9/20) in 1.00 second.
+2021-05-17 22:55:21,082 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (10/20) in 1.00 second.
+2021-05-17 22:55:22,089 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (11/20) in 1.00 second.
+2021-05-17 22:55:23,095 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (12/20) in 1.00 second.
+2021-05-17 22:55:24,101 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (13/20) in 1.00 second.
+2021-05-17 22:55:25,106 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (14/20) in 1.00 second.
+2021-05-17 22:55:26,112 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (15/20) in 1.00 second.
+2021-05-17 22:55:27,118 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (16/20) in 1.00 second.
+2021-05-17 22:55:28,121 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (17/20) in 1.00 second.
+2021-05-17 22:55:29,128 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (18/20) in 1.00 second.
+2021-05-17 22:55:30,135 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:361} : Connection to Redis lost: Retry (19/20) in 1.00 second.
+2021-05-17 22:55:31,142 [CRITICAL] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py:122} : 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2021-05-17 22:55:31,246 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 117, in reconnect_on_error
+    yield
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 167, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 3580, in subscribe
+    ret_val = self.execute_command('SUBSCRIBE', *iterkeys(new_channels))
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 3466, in execute_command
+    self.connection = self.connection_pool.get_connection(
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to localhost:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/kombu/connection.py", line 448, in _reraise_as_library_errors
+    yield
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/base.py", line 748, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 343, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 159, in consume_from
+    return self.start(task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 137, in start
+    self._consume_from(initial_task_id)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 167, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 120, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 354, in ensure
+    return retry_over_time(
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/kombu/utils/functional.py", line 325, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/backends/redis.py", line 105, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 1671, in mget
+    return self.execute_command('MGET', *args, **options)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/client.py", line 898, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to localhost:6379. Connection refused.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 43, in get
+    add.delay(x=5, y=10)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/task.py", line 421, in delay
+    return self.apply_async(args, kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/task.py", line 561, in apply_async
+    return app.send_task(
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/celery/app/base.py", line 749, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/kombu/connection.py", line 452, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: Error 61 connecting to localhost:6379. Connection refused.
+2021-05-18 08:40:43,010 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 42, in get
+    from .tasks import add
+ImportError: cannot import name 'add' from 'district.tasks' (/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py)
+2021-05-18 08:41:01,965 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/celery_exam
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 42, in get
+    from .tasks import add
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py", line 16
+    @shared_task
+    ^
+IndentationError: expected an indented block
+2021-05-18 12:57:49,256 [ERROR] {/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py:11} : error logging in except field!!!!
+2021-05-18 18:43:26,657 [ERROR] {/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py:11} : error logging in except field!!!!
+2021-05-18 18:46:29,767 [ERROR] {/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py:11} : error logging in except field!!!!
+2021-05-18 18:47:49,647 [ERROR] {/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py:11} : error logging in except field!!!!
+2021-05-18 18:50:38,705 [ERROR] {/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py:11} : error logging in except field!!!!
+2021-05-18 19:28:37,052 [ERROR] {/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py:11} : error logging in except field!!!!
+2021-05-18 19:30:08,882 [ERROR] {/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py:11} : error logging in except field!!!!
+2021-05-18 19:35:39,467 [ERROR] {/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py:11} : error logging in except field!!!!
+2021-05-20 13:11:47,364 [ERROR] {/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/tasks.py:11} : error logging in except field!!!!
+2021-06-01 23:31:57,839 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/ListApiViewExample
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'QuerySet' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 109, in get
+    return Response(StudentSerializerS(s).data)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 548, in data
+    ret = super().data
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/fields.py", line 490, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `name` on serializer `StudentSerializerS`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'name'.
+2021-06-01 23:33:02,596 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/ListApiViewExample
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'QuerySet' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 109, in get
+    return Response(StudentSerializerS(s).data)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 548, in data
+    ret = super().data
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/fields.py", line 490, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `name` on serializer `StudentSerializerS`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'name'.
+2021-06-01 23:33:20,803 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/ListApiViewExample
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'QuerySet' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 109, in get
+    return Response(StudentSerializerS(s).data)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 548, in data
+    ret = super().data
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/fields.py", line 490, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `name` on serializer `StudentSerializerS`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'name'.
+2021-06-01 23:36:48,536 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/ListApiViewExample
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 113, in get
+    return Response(StudentSerializerS(s, many=True, context=context).data)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 121, in __new__
+    return cls.many_init(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/serializers.py", line 146, in many_init
+    child_serializer = cls(*args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/serializers.py", line 52, in __init__
+    self.fields.pop(field_name)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/_collections_abc.py", line 795, in pop
+    value = self[key]
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/utils/serializer_helpers.py", line 148, in __getitem__
+    return self.fields[key]
+KeyError: 'students'
+2021-07-04 15:24:37,475 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/query_testing
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: query_testing() takes 0 positional arguments but 1 was given
+2021-07-04 15:25:02,120 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/query_testing
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 309, in check_response
+    raise ValueError(
+ValueError: The view district.views.query_testing didn't return an HttpResponse object. It returned None instead.
+2021-07-04 15:25:46,176 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/query_testing
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+2021-07-04 15:25:47,222 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/query_testing
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+2021-07-04 15:26:39,769 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/query_testing
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+2021-07-04 15:26:40,817 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/query_testing
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+2021-07-04 18:59:56,073 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/query_testing
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 797, in query_testing
+    print(i.name, i.languages.name)
+AttributeError: 'Framework' object has no attribute 'languages'
+2021-07-04 19:00:14,369 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/query_testing
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 797, in query_testing
+    print(i.name, i.languages.name)
+AttributeError: 'Framework' object has no attribute 'languages'
+2021-07-04 23:05:37,304 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/query_many_to_many
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/rohitkumar/Desktop/cru/django_curd/POLITICS/district/views.py", line 813, in query_many_to_many
+    for i in s:
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/db/models/query.py", line 287, in __iter__
+    self._fetch_all()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/db/models/query.py", line 1310, in _fetch_all
+    self._prefetch_related_objects()
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/db/models/query.py", line 814, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/db/models/query.py", line 1697, in prefetch_related_objects
+    raise AttributeError("Cannot find '%s' on %s object, '%s' is an invalid "
+AttributeError: Cannot find 'student' on Courses object, 'student' is an invalid parameter to prefetch_related()
+2021-08-02 23:05:21,072 [ERROR] {/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/utils/log.py:224} : Internal Server Error: /district/Dview
+Traceback (most recent call last):
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/Users/rohitkumar/.pyenv/versions/3.8.5/lib/python3.8/site-packages/rest_framework/views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`

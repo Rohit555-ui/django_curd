@@ -37,6 +37,17 @@ from rest_framework import generics
 
 from django.views import View
 
+class CeleryClassView(APIView):
+    def get(self, request):
+        from .tasks import add
+        add.delay(x=5, y=10)
+        return Response("success")
+
+    def post(self, request):
+        from .tasks import post_add
+        post_add.delay(a=5, b=10)
+        return Response("success")
+
 
 class DjangoBaseView(View):
     def get(self, request):
@@ -89,11 +100,17 @@ class CreateApiViewExample(CreateAPIView):
     def get(self, request, *args, **kwargs):
         return Response(request.query_params)
 
-class ListApiViewExample(ListAPIView):
+class ListApiViewExample(APIView):
     serializer_class = StudentSerializerS
-    queryset = Student.objects.all()
+    # queryset = Student.objects.all()
 
     def get(self, request, *args, **kwargs):
+        s = Student.objects.all()
+        context={
+            'with_name': False,
+            'with_address': True
+        }
+        return Response(StudentSerializerS(s, many=True, context=context).data)
         print(kwargs)
         if 'id' in kwargs:
             return StudentSerializerS(self.queryset.filter(id=kwargs['id'])).data
@@ -392,6 +409,17 @@ def many_to_many(request):
             return Response("Delete Successfully")
         except Exception as e:
             return Response(str(e))
+
+def test():
+    l = 0
+    from django.db import connection
+    s = Student.objects.filter()
+    for so in s:
+        c = so.course.all()
+        print(c)
+    print(connection.queries)
+    l = len(connection.queries)
+    print(l)
 
 
 class StudentDetailsMixin(mixins.CreateModelMixin,
@@ -759,6 +787,51 @@ class DistrictAction(APIView):
                 'error': str(e)
             }
             return Response(response_data, status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+def query_testing(request):
+    from django.db import connection
+    # for forward fourign key
+    # f = Framework.objects.all().select_related("language")
+
+    # for reverse fourign key
+    l = Language.objects.all().prefetch_related("framework_set")
+    for i in l:
+        print(i.name, i.framework_set.all())
+
+    print(connection.queries)
+    l=len(connection.queries)
+    print(f"nof of queries: {l}")
+    return Response({"status": "success"}, status.HTTP_200_OK)
+
+
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+def query_many_to_many(request):
+    from django.db import connection
+    # s = Student.objects.all().prefetch_related("course")
+    s = Courses.objects.all().prefetch_related("student_set")
+    for i in s:
+        print(i.student_set.all())
+    # from IPython.core.debugger import Tracer
+    # Tracer()()
+
+    print(connection.queries)
+    l=len(connection.queries)
+    print(f"nof of queries: {l}")
+    return Response({"status": "success"}, status.HTTP_200_OK)
+
+
+class Dview(ListView):
+    model = Student
+    template_name = 
+    def get(self, request):
+        data_dict = {
+            "name": "rohit",
+            "age": "24"
+        }
+        return render(request, 'country/allCountry.html', data_dict)
+
+
 
 
 
